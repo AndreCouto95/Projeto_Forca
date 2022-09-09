@@ -2,7 +2,6 @@ def checkLetter(letter,secret,word):
     word = list(word)
     aux = len(secret)
     for x in range(aux):
-        print(letter, secret[x])
         if letter == secret[x]:
             word[x] = letter
     word = "".join(z for z in word)
@@ -31,7 +30,10 @@ else:
         else:
             attempt += 1
             print(f'Ops. Miss it.\n{word}\n\n')
-
-    print(f'You did it! You found the word: {word}.')
-    print('Thanks for playing! See you later.')
+    if word != secret:
+        print(f'Sorry, you lost! The secret word is: {secret}.\nTry again some other time.')
+    else:
+        print(f'You did it! You found the word: {word}.')
+    
+    print('\nThanks for playing! See you later.')
 
